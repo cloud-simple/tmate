@@ -15,7 +15,7 @@ docker push cloudsimple/tmate:v0.1.0
 
 ### Using Kubernetes pod
 
-* Define `TMATE_API_KEY` env variable corresponding to you setup and create `tmate` Kubernetes secret
+* Define [`TMATE_API_KEY` env variable](https://tmate.io/#api_key) corresponding to you setup and create `tmate` Kubernetes secret
 
 ```console
 export TMATE_API_KEY=${TMATE_API_KEY:-tmk-DDmpDfrscNzBkStS2W5EXAMPLE}
