@@ -8,7 +8,6 @@
 
 ```console
 export TMATE_API_KEY=${TMATE_API_KEY:-tmk-DDmpDfrscNzBkStS2W5EXAMPLE}
-
 kubectl create secret generic tmate --from-literal=TMATE_API_KEY=${TMATE_API_KEY}
 ```
 
@@ -22,7 +21,9 @@ kubectl create secret generic tmate --from-literal=TMATE_API_KEY=${TMATE_API_KEY
 export USER_PASSWORD=${USER_PASSWORD:-pwd-EXamplePAsswordFOrSUdo1234}
 export TMATE_API_KEY=${TMATE_API_KEY:-tmk-DDmpDfrscNzBkStS2W5EXAMPLE}
 
-kubectl create secret generic tmate --from-literal=USER_PASSWORD=${USER_PASSWORD} --from-literal=TMATE_API_KEY=${TMATE_API_KEY}
+kubectl create secret generic tmate \
+  --from-literal=USER_PASSWORD=${USER_PASSWORD} \
+  --from-literal=TMATE_API_KEY=${TMATE_API_KEY}
 ```
 
 * Create Kubernetes pod using a template like in the following snippet
