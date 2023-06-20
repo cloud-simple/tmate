@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: tmate
+  name: tmate
+spec:
+  containers:
+  - name: tmate
+    image: cloudsimple/tmate:latest
+    args: ["aws-simple"]
+    envFrom:
+    - secretRef:
+        name: tmate
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
