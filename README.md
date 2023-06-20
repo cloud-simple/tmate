@@ -29,7 +29,7 @@ kubectl create secret generic tmate --from-literal=USER_PASSWORD=${USER_PASSWORD
 
 > **Note**
 >
-> Change the template's `spec.containers.args` to the list of GitHub users which will to have access to you shared session via SSH using the public keys available from GitHub API `https://github.com/<username>.keys`
+> Change the template's `spec.containers.args` to the list of GitHub users which will have access to you shared session via SSH using the public keys available from GitHub API `https://github.com/<username>.keys`
 
 ```console
 kubectl create -f - << '_EOF'
