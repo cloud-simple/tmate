@@ -1,4 +1,14 @@
-# Shell sessions sharing with `tmate`
+# Shell sessions sharing with [`tmate`](https://tmate.io)
+
+## How to build
+
+* To build and push [Docker image](https://hub.docker.com/r/cloudsimple/tmate) the following commands are used
+
+```console
+git clone https://github.com/cloud-simple/tmate.git && cd tmate
+docker build -t cloudsimple/tmate:latest -t cloudsimple/tmate:v0.1.0 .
+docker push cloudsimple/tmate:latest cloudsimple/tmate:v0.1.0
+```
 
 ## How to run
 
