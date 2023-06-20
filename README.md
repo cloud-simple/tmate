@@ -7,7 +7,8 @@
 ```console
 git clone https://github.com/cloud-simple/tmate.git && cd tmate
 docker build -t cloudsimple/tmate:latest -t cloudsimple/tmate:v0.1.0 .
-docker push cloudsimple/tmate:latest cloudsimple/tmate:v0.1.0
+docker push cloudsimple/tmate:latest
+docker push cloudsimple/tmate:v0.1.0
 ```
 
 ## How to run
