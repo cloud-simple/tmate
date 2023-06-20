@@ -87,6 +87,11 @@ ssh session read only: ssh ro-4KdEXXAMPLEexampleEXAMPLE@nyc1.tmate.io
 ssh session: ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
 ```
 
-* Now everybody who have private keys corresponding to GitHub users specified in `spec.containers.args` can use the command `ssh example-tmate/ubuntu-22-04@nyc1.tmate.io` to access the shared shell session
+* Now everybody who have private keys corresponding to GitHub users specified in `spec.containers.args` can use the following command to access the shared shell session
+
+```console
+ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
+```
+
 * You can add the flag `-i /path/to/private_key` to the above command to specify path to corresponding private key
 * You can also add your private key to `ssh-agent` with the command `ssh-add /path/to/private_key` before you start using the above command
