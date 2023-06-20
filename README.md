@@ -87,7 +87,50 @@ ssh session read only: ssh ro-4KdEXXAMPLEexampleEXAMPLE@nyc1.tmate.io
 ssh session: ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
 ```
 
-* Now everybody who have private keys corresponding to GitHub users specified in `spec.containers.args` can use the following command to access the shared shell session
+### Using Docker container
+
+* You can use the following command to run docker container with `tmate`
+  * Specify [`TMATE_API_KEY` env variable](https://tmate.io/#api_key) with help of `-e` flag
+  * Use docker container args to specify list of GitHub users which will have access to you shared session via SSH (using the public keys available from GitHub API `https://github.com/<username>.keys`)
+
+```console
+docker run -d --rm --name tmate -e "TMATE_API_KEY=tmk-DDmpDfrscNzBkStS2W5EXAMPLE" cloudsimple/tmate:latest aws-simple
+```
+
+<blockquote>
+
+↳ output:
+```
+33343b83d5c28f06ba940c10ce2f2d18ee44de292107549e6eba4dca499edf3f
+```
+</blockquote>
+
+* Use the following command to see logs for the created container and find session user password and SSH session URLs
+
+```console
+docker logs tmate
+```
+
+<blockquote>
+
+↳ output:
+```
+== log: add public key for github user: aws-simple
+== log: user to share session:
+   username: 'pair'
+   password: 'xRd70rvNk7To-1uZbkymEXAMPLE1gyo_aI34pHq8piaVze7F1s'
+== log: su to 'pair' and start 'tmate -F new-session'
+To connect to the session locally, run: tmate -S /tmp/tmate-1099/m6ffYc attach
+Using ~/.ssh/authorized_keys for access control
+Connecting to ssh.tmate.io...
+ssh session read only: ssh ro-4KdEXXAMPLEexampleEXAMPLE@nyc1.tmate.io
+ssh session: ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
+```
+</blockquote>
+
+## How tp connect to shared shell session
+
+* Now everybody who have private keys corresponding to GitHub users (specified as `spec.containers.args` for Kubernetes pod or as container args for `docker run` command) can use the command from the logs similar to the following to access the shared shell session
 
 ```console
 ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
