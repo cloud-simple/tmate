@@ -16,7 +16,7 @@ kubectl create secret generic tmate --from-literal=TMATE_API_KEY=${TMATE_API_KEY
 
 > **Note**
 >
-> If you used the previous command, delete the `tmate` Kubernetes secret befor using this one
+> If you used the previous command, delete the `tmate` Kubernetes secret befor using this command
 
 ```console
 export USER_PASSWORD=${USER_PASSWORD:-pwd-EXamplePAsswordFOrSUdo1234}
