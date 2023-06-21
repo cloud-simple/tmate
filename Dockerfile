@@ -11,9 +11,11 @@ RUN useradd --comment '${USER_PAIR}' --uid 1099 --user-group --create-home --she
  && touch /home/${USER_PAIR}/.ssh/authorized_keys \
  && chmod 700 /home/${USER_PAIR}/.ssh \
  && chmod 600 /home/${USER_PAIR}/.ssh/authorized_keys \
- && touch /home/${USER_PAIR}/.tmate.conf \
+ && touch /home/${USER_PAIR}/{.tmate.conf,.tmux.conf} \
  && chown -R ${USER_PAIR}:${USER_PAIR} /home/${USER_PAIR} \
  && usermod -aG sudo ${USER_PAIR}
+
+COPY .tmux.conf /root/
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
