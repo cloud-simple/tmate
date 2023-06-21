@@ -17,7 +17,10 @@ set tmate-session-name "ubuntu-22-04"
 set tmate-authorized-keys "~/.ssh/authorized_keys"
 _EOF
 
-test ! -s /root/.tmux.conf || cat /root/.tmux.conf >> /home/${USER_PAIR}/.tmux.conf
+test ! -s /root/.tmux.conf || {
+  cat /root/.tmux.conf >> /home/${USER_PAIR}/.tmux.conf
+  echo 'source-file ~/.tmux.conf' >> /home/${USER_PAIR}/.tmate.conf
+}
 
 PASS=${USER_PASSWORD:-$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c50)}
 echo -e "== log: user to share session:\n   username: '${USER_PAIR}'\n   password: '${PASS}'"
