@@ -74,6 +74,7 @@ kubectl logs tmate
 * Here is an example output for the above command
 
 <blockquote>
+
 ↳ output:
 ```
 == log: add public key for github user: aws-simple
@@ -102,6 +103,7 @@ docker run -d --rm --name tmate -e "TMATE_API_KEY=tmk-DDmpDfrscNzBkStS2W5EXAMPLE
 ```
 
 <blockquote>
+
 ↳ output:
 ```
 33343b83d5c28f06ba940c10ce2f2d18ee44de292107549e6eba4dca499edf3f
@@ -115,6 +117,7 @@ docker logs tmate
 ```
 
 <blockquote>
+
 ↳ output:
 ```
 == log: add public key for github user: aws-simple
