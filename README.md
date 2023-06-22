@@ -73,6 +73,7 @@ kubectl logs tmate
 
 * Here is an example output for the above command
 
+<blockquote>
 ↳ output:
 ```
 == log: add public key for github user: aws-simple
@@ -86,6 +87,9 @@ Connecting to ssh.tmate.io...
 ssh session read only: ssh ro-4KdEXXAMPLEexampleEXAMPLE@nyc1.tmate.io
 ssh session: ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
 ```
+</blockquote>
+
+* See the section below on [how to connect to shared shell session](#how-to-connect-to-shared-shell-session)
 
 ### Using Docker container
 
@@ -98,7 +102,6 @@ docker run -d --rm --name tmate -e "TMATE_API_KEY=tmk-DDmpDfrscNzBkStS2W5EXAMPLE
 ```
 
 <blockquote>
-
 ↳ output:
 ```
 33343b83d5c28f06ba940c10ce2f2d18ee44de292107549e6eba4dca499edf3f
@@ -112,7 +115,6 @@ docker logs tmate
 ```
 
 <blockquote>
-
 ↳ output:
 ```
 == log: add public key for github user: aws-simple
@@ -128,7 +130,9 @@ ssh session: ssh example-tmate/ubuntu-22-04@nyc1.tmate.io
 ```
 </blockquote>
 
-## How tp connect to shared shell session
+* See the next section on how to connect to shared shell session
+
+## How to connect to shared shell session
 
 * Now everybody who have private keys corresponding to GitHub users (specified as `spec.containers.args` for Kubernetes pod or as container args for `docker run` command) can use the command from the logs similar to the following to access the shared shell session
 
